@@ -1,0 +1,32 @@
+<meta charset="UTF">
+<br>
+<h1> Juego: </h1>
+
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea()
+	}
+	function sorteo(n) {
+		imprimir("Vamos a adivinar.")
+		return Math.round(Math.random()*n);
+	}
+
+	imprimir("Usando WHILE:")
+
+	var multiplicador = 0;
+	var tabla = parseInt(prompt("Ingrese la tabla a calcular: ")) // lo ocupamos tanto para el while como para el for.
+	while (multiplicador <= 10) {
+		imprimir(tabla*multiplicador)
+		multiplicador++ //va aumentando el multiplicador hasta llegar a 10.
+	}
+	imprimir("Usando FOR:")
+
+	for (var multiplicador=0; multiplicador<=10; multiplicador++) {
+		imprimir(tabla*multiplicador);
+	}
+
+</script>

@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<h1>HTML + JS en la pagina.</h1>
+<input/>
+<button>Tu mama en tanga?</button>
+
+<script>
+	function saltarLinea () {
+		document.write("<br>");
+	}
+	function imprimir (mensaje) {
+		document.write(mensaje);
+	}
+	function aleatorio() {
+		return Math.round(Math.random()*10);
+	}
+	function sortearNumero(cantidad) {
+		var secretos = [];
+
+		contador = 1;
+		while (contador<=cantidad) {
+			var numeroAleatorio = aleatorio();
+			console.log(numeroAleatorio)
+			var numeroEncontrado = false;
+			for (posicion=0; posicion<secretos.length; posicion++) {
+				if (numeroAleatorio == secretos[posicion]) {
+					numeroEncontrado = true;
+					break;
+				}
+			}
+			if (numeroEncontrado == false) {
+				secretos.push(numeroAleatorio);
+				contador++;
+			}
+		}
+		return secretos
+	}
+
+	var secretos = sortearNumero(4);//ESTO SERIA LA CANTIDAD DE NUMEROS ALEATORIOS QUE QUEREMOS.
+	console.log(secretos)
+
+	var input = document.querySelector("input");
+	input.focus();//focaliza el cursor en la casilla del input.
+
+	function verificar() {
+		var encontrado = false;
+
+		for (var posicion = 0; posicion < secretos.length; posicion++) {
+			if (parseInt(input.value)==secretos[posicion]) {
+				alert("Usted acertó.");
+				encontrado = true;
+				break;
+			}
+		}
+		
+		if (encontrado == false) {
+			alert("Usted erro.");
+		}
+		input.value = "";//Nos borra el numero que pusimos, para poder escribir de nuevo.
+		input.focus();//focaliza el cursor en la casilla del input.
+	}
+	var button = document.querySelector("button");// idem lo que dice arriba, solamente que ahora nos trae todo lo del button.
+	button.onclick = verificar; //para que no nos ejecute de entrada, solamente cuando hacemos click en el button.
+	saltarLinea();
+</script>

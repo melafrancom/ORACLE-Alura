@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<h1>HTML + JS en la pagina.</h1>
+<input/>
+<button>Tu mama en tanga?</button>
+
+<script>
+	function saltarLinea () {
+		document.write("<br>");
+	}
+	function imprimir (mensaje) {
+		document.write(mensaje);
+	}
+
+	//.............................................
+
+	var secreto = Math.round(Math.random()*10);
+	var input = document.querySelector("input");// es la variable comunicador entre JS y HTML. Le estamos dando el nombre de la etiqueta que queremos rescatar. Nos traera todo el objeto de imput, a JS.
+	input.focus();//focaliza el cursor en la casilla del input.
+
+	function verificar() {
+		if (parseInt(input.value)==secreto) {//si ponemos solamente imput, nos trae toda la etiqueta, con esto, solo el valor y lo compara con secreto.
+			alert("Usted acertó.")
+		}
+		else {
+			alert("Usted erró.")
+		}
+		//............................................. mejorando el programa:
+		input.value = "";//Nos borra el numero que pusimos, para poder escribir de nuevo.
+		input.focus();//focaliza el cursor en la casilla del input.
+	}
+	var button = document.querySelector("button");// idem lo que dice arriba, solamente que ahora nos trae todo lo del button.
+	button.onclick = verificar; //para que no nos ejecute de entrada, solamente cuando hacemos click en el button.
+
+	//............................................. mejorando el programa:
+
+
+	saltarLinea();
+</script>
+
+Lo aprendiste a través del document.write que escribimos en la pantalla, pero el document tiene también otras funcionalidades. Es a través de document.querySelector que podemos ir hasta el mundo HTML y llevar el elemento al mundo JavaScript para que podamos manipularlo. Pero ten cuidado, el correcto es querySelector con una S mayúscula. Si escribes con una s minúscula, cometerás un error de sintaxis. Continuando... document.querySelector recibe un parámetro del nombre de las etiquetas que queremos buscar del mundo HTML. Es más poderoso de lo que piensas y acepta recibir otros tipos de parámetros, pero para nuestra capacitación, entender que si pasamos el nombre de una etiqueta HTML nos devolverá la etiqueta en el mundo JavaScript es suficiente. 

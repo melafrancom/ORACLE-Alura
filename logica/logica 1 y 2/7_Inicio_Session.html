@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<h1>Inicio de sesion en JS:</h1>
+<script>
+	function saltarLinea () {
+		document.write("<br>");
+	}
+	function imprimir (mensaje) {
+		document.write(mensaje);
+	}
+	/*
+	Cambia el código anterior para que el usuario tenga 3 intentos de inicio de sesión. Atención: si lo hace bien en el primer intento, no tiene sentido seguir preguntando por su nombre de usuario y contraseña.
+	*/
+
+	var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+
+    var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+    intentos = 1
+    while (intentos<3) {
+    	intentos++
+	    if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+	        alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+	        break;
+	    } else {
+	        alert("inicio de sesión inválido. Favor intente de nuevo");
+    	    var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+			var contrasenhaIngresada = prompt("Ingrese su contraseña");
+				if(intentos==3) {
+					alert("Ya no quedan intentos.")
+				}
+	    }	
+    }
+
+</script>
