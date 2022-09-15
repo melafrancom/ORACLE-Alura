@@ -1,0 +1,43 @@
+.titulo_centralizado{
+    padding-left: 30px;
+}
+#banner{
+    width: 100%;
+}
+.principal{
+    background: #cccccc;
+    padding: 20px;
+}
+.titulo_centralizado{
+    text-align: center;
+}
+p{/* Esto se llama selector en css.*/
+    text-align: center;   
+}
+
+#mision{
+    font-size: 24px;
+}
+
+em strong{
+    color: red;
+}
+
+.diferenciales{
+    background-color: azure;
+    padding: 30px;
+}
+
+.items{
+    font-style: italic;
+}
+ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+
+}
+.img_diferenciales{
+    width: 50%;
+}
