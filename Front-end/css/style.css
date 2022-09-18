@@ -4,13 +4,14 @@
 #banner{
     width: 100%;
 }
+.titulo_centralizado{
+    text-align: center;
+}
 .principal{
     background: #cccccc;
     padding: 20px;
 }
-.titulo_centralizado{
-    text-align: center;
-}
+
 p{/* Esto se llama selector en css.*/
     text-align: center;   
 }
@@ -31,12 +32,11 @@ em strong{
 .items{
     font-style: italic;
 }
-ul{
+.items_block{
     display: inline-block;
     vertical-align: top;
     width: 20%;
     margin-right: 15%;
-
 }
 .img_diferenciales{
     width: 50%;
