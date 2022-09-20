@@ -7,7 +7,6 @@
         <title>Contacto</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/style_home.css">
     </head>
 
     <body>
@@ -26,15 +25,35 @@
         <main>
             <form>
                 <label for="nombreapellido">Nombre y Apellido.</label>
-                <input type="text" id="nombreapellido">
+                <input type="text" id="nombreapellido" class="input-padron" required>
 
                 <label for="email">Email.</label>
-                <input type="text" id="email">
+                <input type="email" id="email" class="input-padron" required placeholder="email@dominio.com">
 
                 <label for="telefono">Teléfono.</label>
-                <input type="text" id="telefono">
+                <input type="tel" id="telefono" class="input-padron" required placeholder="(+XX) XXX XXX XXX">
 
-                <input type="submit" value="Enviar formulario.">
+                <label for="mensaje">Mensaje:</label>
+                <textarea cols="55" rows="10" id="mensaje" class="input-padron" required></textarea>
+                <fieldset>
+                    <legend>Como le gustaria que lo contactemos?</legend>
+                    <label for="radio-email"><input type="radio" name="contacto" value="email" id="radio-email">Email</label>
+                    <label for="radio-teléfono"><input type="radio" name="contacto" value="teléfono" id="radio-teléfono">Teléfono</label>
+                    <label for="radio-whatsapp"><input type="radio" name="contacto" value="whatsapp" id="radio-whatsapp" checked>Whatsapp</label>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        En que horario desea ser atendido?
+                    </legend>
+                    <select>
+                        <option>Mañana</option>
+                        <option>Tarde</option>
+                        <option>Noche</option>
+                    </select>
+                </fieldset>
+
+                <label class="checkbox"><input type="checkbox" checked>Le gustaria recibir novedades de la barberia? </label>
+                <input type="submit" value="Enviar formulario." class="enviar">
             </form>
         </main>
         <footer>
